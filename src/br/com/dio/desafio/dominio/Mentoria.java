@@ -1,34 +1,12 @@
 package br.com.dio.desafio.dominio;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
-public class Mentoria {
-	
-	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+public class Mentoria extends Conteudo{
 
-	private String titulo;
-	private String descuicao;
 	private LocalDate data;
 
 	public Mentoria() {
-		super();
-	}
-	
-	public String getTitulo() {
-		return titulo;
-	}
-	
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
-	
-	public String getDescuicao() {
-		return descuicao;
-	}
-	
-	public void setDescuicao(String descuicao) {
-		this.descuicao = descuicao;
 	}
 	
 	public LocalDate getData() {
@@ -40,8 +18,13 @@ public class Mentoria {
 	}
 
 	@Override
+	public double calcularXp() {
+		return XP_PADRAO + 20;
+	}
+	
+	@Override
 	public String toString() {
-		return "Mentoria [titulo=" + titulo + ", descuicao=" + descuicao + ", data=" + data + "]";
+		return "Mentoria [titulo=" + getTitulo() + ", descuicao=" + getDescricao() + ", data=" + data + "]";
 	}
 	
 }
